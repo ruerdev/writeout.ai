@@ -29,7 +29,7 @@
 
                 <audio controls>
                     <source
-                        src="{{ Storage::disk('do')->url(\App\Models\Transcript::firstWhere('public', true)->hash) }}"
+                        src="https://www2.cs.uic.edu/~i101/SoundFiles/StarWars3.wav"
                         type="audio/mpeg">
                 </audio>
             </div>
@@ -40,9 +40,7 @@
                     In more than 10 languages, including Klingon 🤓
                 </p>
                 <p class="text-white pb-4 text-lg">
-                    Take a look at the <a class="font-medium underline" href="{{ action(\App\Http\Controllers\ShowTranscriptController::class, \App\Models\Transcript::firstWhere('public', true)) }}">
-                        demo.
-                    </a>
+                    Take a look at the demo.
                 </p>
 
                 <video playsinline autoplay loop muted>
