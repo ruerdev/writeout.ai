@@ -18,7 +18,7 @@ class TranscribeAudioController extends Controller
             'file' => [
                 'required',
                 'file',
-                'max:'.(25 * 1024), // max 25MB
+                'max:'.(100 * 1024), // max 100MB
             ]
         ]);
 
@@ -30,7 +30,7 @@ class TranscribeAudioController extends Controller
 
         // Store the file in the public disk
         $path = $request->file('file')
-            ->storePubliclyAs('transcribe', $filename, 'do');
+            ->storePubliclyAs('transcribe', $filename, 'local');
 
         // Store the file locally temporarily for OpenAI
         $request->file('file')

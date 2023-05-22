@@ -13,7 +13,6 @@
                     The page will refresh automatically when the transcription is complete.
                 </p>
             </div>
-            @include('partials.banner')
         @elseif ($transcript->failed())
             <div class="mx-auto max-w-2xl md:text-center">
                 <h2
@@ -24,7 +23,6 @@
                     We were unable to transcribe your audio. Please try again.
                 </p>
             </div>
-            @include('partials.banner')
         @elseif($transcript->isTranscribed() || $transcript->isTranslated() || $transcript->isTranslating())
             <div class="mx-auto max-w-2xl md:text-center mb-12">
                 <h2
@@ -76,7 +74,6 @@
                     </a>
                 </div>
             </div>
-            @include('partials.banner')
             <div id="webvtt-player"
                  data-audio="{{ Storage::disk('do')->url($transcript->hash) }}"
                  data-transcript="{{ action(\App\Http\Controllers\ShowTranscriptVttController::class, [
