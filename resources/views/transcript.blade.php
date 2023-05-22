@@ -75,7 +75,7 @@
                 </div>
             </div>
             <div id="webvtt-player"
-                 data-audio="{{ Storage::disk('do')->url($transcript->hash) }}"
+                 data-audio="{{ Storage::disk('local')->url($transcript->hash) }}"
                  data-transcript="{{ action(\App\Http\Controllers\ShowTranscriptVttController::class, [
                     'transcript' => $transcript,
                     'language' => request()->get('language') ?? '',

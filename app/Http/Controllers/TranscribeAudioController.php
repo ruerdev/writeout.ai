@@ -18,7 +18,7 @@ class TranscribeAudioController extends Controller
             'file' => [
                 'required',
                 'file',
-                'max:'.(100 * 1024), // max 100MB
+                'max:'.(25 * 1024), // max 25MB
             ]
         ]);
 
